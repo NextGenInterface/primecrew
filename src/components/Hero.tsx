@@ -8,7 +8,7 @@ import Image from "next/image";
 export const Hero = () => {
    const router = useRouter();
    return (
-      <div className="bg-yellow-400 justify-center items-center flex px-4 h-screen py-24">
+      <div className="bg-sky-500 justify-center items-center flex px-4 h-screen py-24">
          <div className="max-w-6xl mx-auto flex flex-col-reverse justify-center items-center grid-cols-1 lg:grid lg:grid-cols-2 lg:gap-12 ">
             <div className="my-auto">
                <div className="space-y-10 lg:space-y-20">
