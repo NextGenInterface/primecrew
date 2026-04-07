@@ -33,7 +33,7 @@ export const Navbar = () => {
          <div className="flex items-center justify-between w-full max-w-6xl mx-auto px-4 h-16 relative">
             <Link href={"/"} className="flex items-center gap-2">
                <Logo box="#262626" arrow="#262626" className="w-6 md:w-6" />
-               <LogoName color="#262626" className="relative top-1 w-30 md:w-38" />
+               <LogoName color="#262626" className="relative top-1 w-30" />
             </Link>
             <div className="hidden md:flex flex-1 w-full gap-6 justify-end h-full ">
                {navLinks.map((l) => (
