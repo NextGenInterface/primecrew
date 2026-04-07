@@ -51,7 +51,7 @@ export default function HomeRemoval() {
             </div>
          </div>
          <div className="max-w-6xl mx-auto">
-            <div className="grid grid-cols-1  md:grid-cols-4 gap-4 p-4">
+            <div className="grid grid-cols-1 md:grid-cols-4 gap-4 p-4 space-y-6 md:space-y-0">
                {data.map((card) => (
                   <div key={card.title} className="space-y-2">
                      <div className="h-40 rounded-md overflow-hidden">
@@ -64,7 +64,7 @@ export default function HomeRemoval() {
                            className="object-cover h-full w-full object-center "
                         />
                      </div>
-                     <div className="h-80 space-y-3">
+                     <div className="space-y-3 ">
                         <h1 className="font-bold"> {card.title}</h1>
                         <p className="text-sm">{card.content}</p>
                      </div>

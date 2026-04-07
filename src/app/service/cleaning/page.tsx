@@ -50,7 +50,7 @@ export default function Cleaning() {
             </div>
          </div>
          <div className="max-w-6xl mx-auto ">
-            <div className="grid grid-cols-1 md:grid-cols-4 gap-4 p-4">
+            <div className="grid grid-cols-1 md:grid-cols-4 gap-4 p-4 space-y-6 md:space-y-0">
                {data.map((card) => (
                   <div key={card.title} className="space-y-2">
                      <div className="h-40 rounded-md overflow-hidden">
