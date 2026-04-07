@@ -1,63 +1,52 @@
 import Link from "next/link";
 import React from "react";
-import { FaFacebookF, FaLinkedinIn } from "react-icons/fa";
-
-const footerLinks = ["about us", "contact us", "get quote"];
+import { Logo } from "./Logo";
+import { LogoName } from "./LogoName";
 
 export const Footer = () => {
    return (
-      <div className="px-4 lg:px-24 pt-12 pb-2 bg-[#444444] text-white">
-         <div className="flex flex-col gap-6 lg:gap-0 lg:flex-row justify-between items-start">
-            <div className="flex-col flex gap-4">
-               <div className="flex-col flex gap-4">
-                  <h1 className="text-2xl">020 8123 4567 </h1>
-                  <p className="text-lg">We&apos;re here 7 days a week</p>
+      <div className="px-4 lg:px-24 py-12 pb-2 bg-neutral-300">
+         <div className="max-w-6xl mx-auto p-4 space-y-4">
+            <div className="grid grid-cols-1 gap-4 md:gap-0 md:grid-cols-2">
+               <div className="space-y-4">
+                  <Link href={"/"} className="flex items-center gap-2">
+                     <Logo box="#262626" arrow="#262626" className="w-6 md:w-6" />
+                     <LogoName color="#262626" className="relative top-1 w-30 md:w-38" />
+                  </Link>
+                  <p className="text-sm">
+                     Reliable & Affordable Removals, Clearance & Cleaning Services Professional • Reliable • Careful
+                     Handling for Every Job
+                  </p>
+                  {/* <ul className="">
+                     {navLinks?.map((link) => (
+                        <li key={link.label}>
+                           <Link href={"/"} className="capitalize font-semibold text-sm hover:underline">
+                              {link.label}
+                           </Link>
+                        </li>
+                     ))}
+                  </ul> */}
                </div>
-               <div className="flex gap-3 items-center">
-                  <div className="bg-[#909090] w-10 h-10 rounded-full hover:bg-stone-200 justify-center items-center flex">
-                     <FaFacebookF className="text-[#444444]" />
-                  </div>
-                  <div className="bg-[#909090] w-10 h-10 rounded-full hover:bg-stone-200 justify-center items-center flex">
-                     <FaLinkedinIn className="text-[#444444]" />
-                  </div>
-                  <div className="bg-[#909090] w-10 h-10 rounded-full hover:bg-stone-200 justify-center items-center flex">
-                     <FaLinkedinIn className="text-[#444444]" />
+
+               <div className="flex flex-col gap-6 lg:gap-0 lg:flex-row justify-end items-start">
+                  <div className="flex-col flex gap-4 justify-end">
+                     <div className="flex-col flex gap-4">
+                        <div className="">
+                           <p>Call:</p>
+                           <h1 className="text-xl">079 0838 0510</h1>
+                        </div>
+                        <div className="">
+                           <p>WhatsApp:</p>
+                           <h1 className="text-xl">077 6703 381</h1>
+                        </div>
+                     </div>
                   </div>
                </div>
             </div>
-            <ul className="">
-               {footerLinks.map((link) => (
-                  <li key={link}>
-                     <Link href={"/"} className="capitalize font-semibold text-sm hover:underline">
-                        {link}
-                     </Link>
-                  </li>
-               ))}
-            </ul>
-         </div>
-         <div className="w-full bg-[#909090]/50 h-[1px] my-5"></div>
-         <div className="lg:flex justify-between items-center font-semibold text-sm">
-            <div className="w-full">
-               <Link href={""} className="hover:underline">
-                  Privacy policy |
-               </Link>{" "}
-               <Link href={""} className="hover:underline">
-                  Terms of use |
-               </Link>{" "}
-               <Link href={""} className="hover:underline">
-                  Insurance |
-               </Link>{" "}
-               <Link href={""} className="hover:underline">
-                  Sitemap
-               </Link>
+            <div className="w-full py-4 border-t border-neutral-500">
+               <p className="text-sm">Copyright © 2026 Primecrew Ltd. All rights reserved.</p>
             </div>
-            <p>Copyright © 2025 Primecrew Ltd. All rights reserved.</p>
          </div>
-         <p className="text-tiny lg:text-sm text-center my-6">
-            Primecrew Ltd is an Appointed Representative of Eggar Forrester Insurance who are Authorised and Regulated
-            by the Financial Conduct Authority. FCA Number 300008 Primecrew Limited is a company registered in England
-            and Wales. | Registered address: 5th Floor, The street, Haringay, London, N22 6AJ | Company number: 0000000
-         </p>
       </div>
    );
 };

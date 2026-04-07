@@ -1,38 +1,51 @@
 import Link from "next/link";
 import React from "react";
 import Image from "next/image";
+import { BsArrowRight } from "react-icons/bs";
 
 export const Service = () => {
    const servicesArray = [
-      { title: "home removal", img: "./homeremoval.jpg", url: "/home-removal" },
-      { title: "furniture & appliance", img: "./furniture.png", url: "/furniture-and-appliance" },
-      { title: "office removal", img: "./office.jpg", url: "/office-removal" },
-      { title: "logistic", img: "./logistic.jpg", url: "/logistics" },
+      {
+         title: "Removals & Clearance Services",
+         img: "/removal.avif",
+         list: ["Exterior Cleaning Services", "Interior Cleaning Services"],
+         url: "/service/removal",
+      },
+      {
+         title: "Cleaning Solutions",
+         img: "/cleaning.avif",
+         list: ["Home & Flat Removals", "Office Relocations", "House & Property Clearance", "Waste Removal & Disposal"],
+         url: "/service/cleaning",
+      },
    ];
    return (
-      <div className="px-6 lg:px-48 py-12 lg:py-24 bg-[#ededed]">
-         <h1 className="text-3xl lg:text-4xl font-bold text-center capitalize">More services</h1>
-         <div className="grid grid-cols-2 gap-2 lg:gap-6 justify-between my-12">
-            {servicesArray.map((ser) => (
-               <Link
-                  key={ser.title}
-                  href={ser.url}
-                  className="rounded-md h-28 lg:h-48 relative overflow-hidden bg-white shadow-md cursor-pointer group"
-               >
+      <div className=" justify-center grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-0 bg-neutral-100">
+         {servicesArray.map((ser) => (
+            <div key={ser.title} className="grid grid-cols-1 md:grid-cols-2 items-center w-full ">
+               <div className="h-48 md:h-96">
                   <Image
                      src={ser?.img}
                      alt=""
                      width={500}
                      height={500}
                      priority
-                     className="object-cover object-center h-full w-full opacity-55 hover:opacity-80 duration-300"
+                     className="object-cover object-center h-full w-full"
                   />
-                  <h1 className="lg:text-2xl lg:text-nowrap text-center [text-shadow:_0_0px_7px_#fff] font-black capitalize absolute bottom-1 left-1/2 -translate-1/2">
-                     {ser?.title}
-                  </h1>
-               </Link>
-            ))}
-         </div>
+               </div>
+
+               <div className="space-y-4 p-6">
+                  <h1 className="text-3xl font-black">{ser.title}</h1>
+                  <ul className="list-disc left-5 relative">
+                     {ser.list.map((l) => (
+                        <li key={l}>{l}</li>
+                     ))}
+                  </ul>
+                  <Link href={ser.url} className="flex items-center gap-2 underline">
+                     Explore full service <BsArrowRight />
+                  </Link>
+               </div>
+            </div>
+         ))}
       </div>
    );
 };

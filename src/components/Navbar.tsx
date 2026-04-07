@@ -1,31 +1,125 @@
+"use client";
 import Link from "next/link";
-import React from "react";
+import React, { useState } from "react";
 import { Logo } from "./Logo";
 import { LogoName } from "./LogoName";
-import { IoLogoWhatsapp } from "react-icons/io";
+import { MdMenu } from "react-icons/md";
+import { BiChevronDown } from "react-icons/bi";
+import { CgClose } from "react-icons/cg";
+
+export const navLinks = [
+   { url: "/", label: "Home" },
+   {
+      url: "/service",
+      label: "Service",
+      dropdown: [
+         { label: "Clearance & Removal", url: "/service/removal" },
+         { label: "Cleaning Solutions", url: "/service/cleaning" },
+      ],
+   },
+   { url: "/about-us", label: "About" },
+   { url: "/quote", label: "Get a quote" },
+];
 
 export const Navbar = () => {
+   const [dropdown, setDropdown] = useState(false);
+   const [menu, setMenu] = useState(false);
+
    return (
-      <nav className="h-[68px] px-4 lg:px-24 bg-yellow-400 flex justify-between items-center">
-         <Link href={"/"} className="text-2xl font-black text-neutral-800 flex items-center gap-2">
-            <Logo box="#262626" arrow="#262626" className="w-6 md:w-8" />
-            <LogoName color="#262626" className="relative top-1 w-36 md:w-44" />
-         </Link>
-         <a
-            href="https://wa.me/23409077046583?text=Hello%20I%20need%20a%20quote"
-            target="blank"
-            className="md:hidden border border-black rounded-md p-1 px-3 font-bold"
-         >
-            Call us
-         </a>
-         <a
-            href="https://wa.me/23409077046583?text=Hello%20I%20need%20a%20quote"
-            target="blank"
-            className="hidden md:flex items-center gap-2"
-         >
-            <IoLogoWhatsapp className="text-2xl text-neutral-800" />
-            <h1 className="text-2xl font-black text-neutral-800">020 8123 4567</h1>
-         </a>
+      <nav className=" bg-yellow-500 flex justify-between fixed top-0 z-50 w-full shadow-sm shadow-black/3">
+         <div className="flex items-center justify-between w-full max-w-6xl mx-auto px-4 h-16 relative">
+            <Link href={"/"} className="flex items-center gap-2">
+               <Logo box="#262626" arrow="#262626" className="w-6 md:w-6" />
+               <LogoName color="#262626" className="relative top-1 w-30 md:w-38" />
+            </Link>
+            <div className="hidden md:flex flex-1 w-full gap-6 justify-end h-full ">
+               {navLinks.map((l) => (
+                  <div
+                     key={l.label}
+                     className="relative last:font-bold last:border last:h-fit last:self-center last:p-1 last:hover:no-underline last:top-5 last:md:top-0  last:rounded-full last:px-4"
+                     onMouseLeave={() => setDropdown(false)}
+                  >
+                     <Link
+                        key={l.label}
+                        href={l.url}
+                        className="flex items-center hover:underline relative h-full "
+                        onMouseEnter={() => {
+                           if (l.dropdown) setDropdown(true);
+                        }}
+                     >
+                        {l.label}
+                        {l.dropdown && <BiChevronDown />}
+                     </Link>
+                     {dropdown && l.dropdown && (
+                        <div className="bg-white p-4 rounded-xl absolute top-18 -right-20 z-50 w-60 ">
+                           <div className="bg-white w-6 h-6 absolute left-1/3 -top-2 rotate-45"></div>
+                           {
+                              <ul>
+                                 {l.dropdown.map((d) => (
+                                    <li key={d.label} className="">
+                                       <Link
+                                          key={d.label}
+                                          href={d.url}
+                                          className="text-sm cursor-pointer hover:underline"
+                                       >
+                                          {d.label}
+                                       </Link>
+                                    </li>
+                                 ))}
+                              </ul>
+                           }
+                        </div>
+                     )}
+                  </div>
+               ))}
+            </div>
+            <MdMenu size={32} className="md:hidden" onClick={() => setMenu(true)} />
+            {menu && (
+               <div className="bg-yellow-600 fixed top-0 w-full h-screen left-0 right-0 p-8">
+                  <div className="flex justify-end z-20">
+                     <CgClose onClick={() => setMenu(false)} size={32} />
+                  </div>
+                  {navLinks.map((l) => (
+                     <div
+                        key={l.label}
+                        className="relative last:font-bold last:border last:h-fit last:self-center last:p-1 last:hover:no-underline  last:rounded-full last:px-4 space-y-3"
+                        onMouseLeave={() => setDropdown(false)}
+                     >
+                        <Link
+                           key={l.label}
+                           href={l.url}
+                           className="flex items-center hover:underline relative h-full py-2 text-lg font-medium"
+                           onMouseEnter={() => {
+                              if (l.dropdown) setDropdown(true);
+                           }}
+                        >
+                           {l.label}
+                           {l.dropdown && <BiChevronDown />}
+                        </Link>
+                        {l.dropdown && (
+                           <div>
+                              {
+                                 <ul className="left-3 relative space-y-4">
+                                    {l.dropdown.map((d) => (
+                                       <li key={d.label} className="">
+                                          <Link
+                                             key={d.label}
+                                             href={d.url}
+                                             className="text-lg font-medium cursor-pointer hover:underline"
+                                          >
+                                             {d.label}
+                                          </Link>
+                                       </li>
+                                    ))}
+                                 </ul>
+                              }
+                           </div>
+                        )}
+                     </div>
+                  ))}
+               </div>
+            )}
+         </div>
       </nav>
    );
 };

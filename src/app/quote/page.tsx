@@ -7,11 +7,11 @@ export default function Quote() {
    const contact = ["phone", "email", "whatsapp"];
 
    return (
-      <div className="px-4 lg:px-24 my-12">
-         <div className="flex flex-col gap-8">
-            <h1 className="text-2xl font-bold text-neutral-800">Request a Quote</h1>
-            <div className="w-full flex-col flex lg:flex-row gap-4">
-               <div className="bg-white border border-neutral-300 rounded-lg p-4 lg:p-8 w-full lg:w-3/4 ">
+      <div className="py-28 md:p-28">
+         <div className="max-w-6xl mx-auto space-y-6 p-4">
+            <h1 className="text-2xl font-bold">Request a Quote today</h1>
+            <div className="flex-col flex lg:flex-row  w-full md:w-1/2">
+               <div className=" border-neutral-300 rounded-lg w-full">
                   <form action="" className="w-full flex flex-col gap-4">
                      <div className="flex flex-col gap-2">
                         {/* PERSONAL INFO */}
@@ -145,15 +145,11 @@ export default function Quote() {
                            placeholder="Additional Details or Special Requirements (Optional)"
                            aria-multiline
                            rows={30}
-                           className="w-full border border-neutral-300 rounded-lg p-2 h-10"
+                           className="w-full border border-neutral-300 rounded-lg p-2 h-48"
                         />
                      </div>
                      <Button title="Submit" />
                   </form>
-               </div>
-               <div className="">
-                  <h1>Quote ref: 22809703</h1>
-                  <p className="text-3xl font-black text-neutral-700">0208 000 0000</p>
                </div>
             </div>
          </div>
