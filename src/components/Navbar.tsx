@@ -29,7 +29,7 @@ export const Navbar = () => {
    const router = useRouter();
 
    return (
-      <nav className=" bg-yellow-400 flex justify-between fixed top-0 z-50 w-full shadow-sm shadow-black/3">
+      <nav className=" bg-sky-500 flex justify-between fixed top-0 z-50 w-full shadow-sm shadow-black/3">
          <div className="flex items-center justify-between w-full max-w-6xl mx-auto px-4 h-16 relative">
             <Link href={"/"} className="flex items-center gap-2">
                <Logo box="#262626" arrow="#262626" className="w-6 md:w-6" />
@@ -78,7 +78,7 @@ export const Navbar = () => {
             </div>
             <MdMenu size={32} className="md:hidden" onClick={() => setMenu(true)} />
             {menu && (
-               <div className="bg-yellow-400 fixed top-0 w-full h-screen left-0 right-0 p-6">
+               <div className="bg-sky-500 fixed top-0 w-full h-screen left-0 right-0 p-6">
                   <div className="flex justify-end z-20">
                      <CgClose onClick={() => setMenu(false)} size={32} />
                   </div>
