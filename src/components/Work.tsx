@@ -3,23 +3,15 @@ import React from "react";
 export const Work = () => {
    return (
       <div className="p-4 lg:px-24 py-24 flex flex-col justify-center items-center gap-8">
-         <h1 className="text-center uppercase text-[#015fab] font-semibold">London Removals and Storage Services</h1>
          <h1 className="text-3xl lg:text-[2.5rem] font-bold text-center">
-            How <span className="font-black">Primecrew </span> Service Works
+            How <span className="font-black text-sky-600">Primecrew </span> Service Works
          </h1>
          <p>
             Moving a sofa down the street or a whole house across the country? No matter what, Primecrew man and van
             service includes:
          </p>
 
-         <div className="w-[90%] grid lg:grid-cols-3 gap-4">
-            <div className="flex flex-col gap-2">
-               <h1 className="text-xl font-semibold">💰 Price match guarantee</h1>
-               <p>
-                  Customers can save up to 40% with Primecrew, but if you find a better price let us know and we&apos;ll
-                  beat it!
-               </p>
-            </div>
+         <div className="w-[90%] grid lg:grid-cols-2 gap-4">
             <div className="flex flex-col gap-2">
                <h1 className="text-xl font-semibold">✅ Free cancellations</h1>
                <p>
@@ -35,7 +27,6 @@ export const Work = () => {
                </p>
             </div>
          </div>
-         {/* <Button title="Learn more" variant="outline" className="!w-fit" /> */}
       </div>
    );
 };

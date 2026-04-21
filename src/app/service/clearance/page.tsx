@@ -1,25 +1,19 @@
 import Image from "next/image";
 import React from "react";
 
-export default function HomeRemoval() {
+export default function Clearance() {
    const data = [
       {
-         title: "House Removals",
+         title: "House Clearance",
          content:
-            "Save time with our skilled house removals team. We carefully handle packing, loading, transportation, and the disassembly and reassembly of furniture to ensure a smooth and stress-free move to your new home.types of furniture at your new location.",
-         image: "/house_remove.avif",
+            "Our professional house clearance team offers fast and reliable house clearance services in London, removing unwanted furniture, appliances, and waste while ensuring a smooth and hassle-free property clearance.",
+         image: "/house.avif",
       },
       {
-         title: "Waste Removals",
+         title: "Office Relocations",
          content:
-            "Our expert team provides fast and reliable waste removal services across London. We handle household items, bulky items, furniture, and general debris, ensuring everything is removed quickly and safely. Wherever possible, we prioritize responsible disposal and recycling to minimize environmental impact. With professional service and efficient clearance, we leave your property clean, clear, and clutter free.",
-         image: "/waste.avif",
-      },
-      {
-         title: "Commercial waste removal",
-         content:
-            "Our commercial waste removal service helps businesses maintain clean, safe, and clutter-free environments. We handle the collection and responsible disposal of unwanted materials, office waste, furniture, and general rubbish with minimal disruption to your operations. Whether you need a one-time clearance or regular waste removal, our team delivers efficient, reliable service tailored to your business needs.",
-         image: "/waste.avif",
+            "Office RelocationsMinimize disruption to your business operations with our efficient commercial office relocation services. We plan and execute your move around your schedule to help reduce downtime and keep your business running smoothly.",
+         image: "/office.avif",
       },
    ];
    return (
@@ -28,7 +22,7 @@ export default function HomeRemoval() {
             <div className="absolute top-0 -z-10 h-full w-full bg-[url(/removal_back.avif)] bg-cover bg-no-repeat opacity-15"></div>
 
             <div className="max-w-6xl mx-auto space-y-20">
-               <h1 className="text-center font-black text-4xl md:text-5xl">Removal</h1>
+               <h1 className="text-center font-black text-4xl md:text-5xl">Clearance</h1>
                <p>
                   Primecrew Ltd provides professional removals and clearance services in London for both residential and
                   commercial clients. Whether you’re planning a house move, office relocation, or property clearance,
@@ -45,7 +39,7 @@ export default function HomeRemoval() {
             </div>
          </div>
          <div className="max-w-6xl mx-auto">
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-4 p-4 space-y-6 md:space-y-0">
+            <div className="grid grid-cols-1 md:grid-cols-4 gap-4 p-4 space-y-6 md:space-y-0">
                {data.map((card) => (
                   <div key={card.title} className="space-y-2">
                      <div className="h-40 rounded-md overflow-hidden">
