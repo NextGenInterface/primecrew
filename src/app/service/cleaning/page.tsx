@@ -22,10 +22,16 @@ export default function Cleaning() {
          image: "/roof.avif",
       },
       {
-         title: "House Cleaning",
+         title: "Window Cleaning",
          content:
-            "House Cleaning Primecrew provides professional house cleaning services across London for both interior and exterior spaces. Our experienced team helps keep homes clean, fresh, and well maintained with reliable and efficient cleaning solutions. From deep interior cleaning of living spaces, kitchens, and bathrooms to exterior surface cleaning, we ensure every part of your property looks its best. Whether you need a one-off clean or regular house cleaning service, we deliver high-quality results with flexible scheduling.",
-         image: "/house_clean.avif",
+            "Our window cleaning service keeps your property looking bright, clear, and well-maintained. We remove dirt, streaks, and buildup from all types of windows, leaving a spotless, streak-free finish inside and out. Whether for residential or commercial properties, we deliver reliable, high-quality results that enhance both appearance and natural light.",
+         image: "/window.webp",
+      },
+      {
+         title: "Soft washing",
+         content:
+            "Our soft washing service safely removes dirt, algae, mold, and stains from exterior surfaces without causing damage. Using low-pressure cleaning methods and effective treatments, we restore the look of your walls, roofs, driveways, and other surfaces while protecting their condition. It’s a gentle yet powerful solution for long-lasting cleanliness and curb appeal.",
+         image: "/soft.webp",
       },
    ];
    return (
@@ -50,7 +56,7 @@ export default function Cleaning() {
             </div>
          </div>
          <div className="max-w-6xl mx-auto ">
-            <div className="grid grid-cols-1 md:grid-cols-4 gap-4 p-4 space-y-6 md:space-y-0">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-4 p-4 space-y-6 md:space-y-0">
                {data.map((card) => (
                   <div key={card.title} className="space-y-2">
                      <div className="h-40 rounded-md overflow-hidden">

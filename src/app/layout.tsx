@@ -22,7 +22,9 @@ export default function RootLayout({
 }>) {
    return (
       <html lang="en" className="bg-[#f7f7f7]">
-         <body className={`${lato.className} text-[#262626] text-sm sm:text-md md:text-lg xl:text-xl antialiased`}>
+         <body
+            className={`${lato.className} text-[#262626] font-medium text-sm sm:text-md md:text-lg xl:text-xl antialiased`}
+         >
             <Navbar />
             {children}
             <Footer />
